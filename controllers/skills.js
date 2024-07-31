@@ -3,7 +3,6 @@ import { Skill } from "../models/skill.js";
 
 async function index(req, res) {
   try {
-    //res.send('Hello, I am a controller');
     const skills = await Skill.find({})
     res.render('skills/index', {
       skills
