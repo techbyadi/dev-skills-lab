@@ -4,7 +4,9 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
+import methodoverride from 'method-override'
 import logger from 'morgan'
+
 import './config/database.js'
 
 // import routers
@@ -16,6 +18,10 @@ const app = express()
 
 // view engine setup
 app.set('view engine', 'ejs')
+
+
+//custum middleware
+app.use(methodoverride('_method'));
 
 // basic middleware
 app.use(logger('dev'))

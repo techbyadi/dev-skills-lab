@@ -7,12 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Add a new skill</h1>
-  <form autocomplete="off" action="/skills" method="POST">
-    <input type="text" name="skillName">
-    <button type="submit"> Save </button>
-  </form>
+  <h2>Skill details</h2>
+  <h4>Id: </h4> <%= skill._id %>
+  <h4>SkillName: </h4> <%= skill.skillName  %>
+  <h4> Status: </h4> <%= skill.learnt ? 'Learnt' : 'Haven\'t learnt yet'%>
+  <h4><a href="/skills/<%= skill._id %>/edit">Edit Skill</a></h4>
   <h4><a href="/skills/">List of Skills</a></h4>
-  <h4><a href="/">Go Home</a></h4>
 </body>
 </html>
